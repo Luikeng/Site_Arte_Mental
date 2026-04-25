@@ -516,13 +516,14 @@ export default function App() {
           <ScrollReveal direction="up" intensity={80} delay={0.2}>
             <div className="max-w-[400px] mx-auto aspect-[9/16] rounded-3xl overflow-hidden shadow-2xl bg-black/20 flex items-center justify-center border border-white/10">
                {/* Placeholder for YouTube Embed */}
-               <iframe 
+               <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/rXN8j0qpmpI" 
+                  src="https://www.youtube.com/embed/rXN8j0qpmpI"
                   title="Apresentação Geisson Oleques"
-                  frameBorder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
+                  loading="lazy"
                ></iframe>
             </div>
           </ScrollReveal>
