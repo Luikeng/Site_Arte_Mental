@@ -181,7 +181,7 @@ const Hero = () => {
                 Psicólogo em São Leopoldo · Centro · CRP 07/35759
               </span>
               <h1 className="text-3xl md:text-6xl mb-3 md:mb-4 text-brand-secondary leading-tight">
-                Atendimento presencial<br />no Centro de São Leopoldo
+                Atendimento presencial<br />no Centro de <span className="whitespace-nowrap">São Leopoldo</span>
               </h1>
               <p className="text-sm md:text-lg text-brand-text/80 mb-4 md:mb-6 max-w-lg mx-auto md:mx-0 leading-relaxed">
                 Psicoterapia desde 2019. Foco em <strong>ansiedade</strong>, <strong>carreira</strong> e <strong>relações</strong> na vida adulta.
