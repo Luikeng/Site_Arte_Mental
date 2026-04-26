@@ -170,30 +170,30 @@ const Hero = () => {
             e.currentTarget.src = "https://picsum.photos/seed/geisson-mobile/800/1200";
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/75 via-brand-bg/20 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg from-0% via-brand-bg/40 via-30% to-transparent to-55%"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <ScrollReveal direction="up" intensity={50}>
-            <div className="text-center md:text-left pt-6 md:pt-0">
-              <span className="text-brand-primary font-body uppercase tracking-[0.2em] text-xs mb-4 block">
+            <div className="text-center md:text-left pt-2 md:pt-0">
+              <span className="text-brand-primary font-body uppercase tracking-[0.2em] text-[10px] md:text-xs mb-3 md:mb-4 block">
                 Psicólogo em São Leopoldo · Centro · CRP 07/35759
               </span>
-              <h1 className="text-4xl md:text-6xl mb-4 text-brand-secondary leading-tight">
+              <h1 className="text-3xl md:text-6xl mb-3 md:mb-4 text-brand-secondary leading-tight">
                 Atendimento presencial<br />no Centro de São Leopoldo
               </h1>
-              <p className="text-base md:text-lg text-brand-text/80 mb-6 max-w-lg mx-auto md:mx-0 leading-relaxed">
+              <p className="text-sm md:text-lg text-brand-text/80 mb-4 md:mb-6 max-w-lg mx-auto md:mx-0 leading-relaxed">
                 Psicoterapia desde 2019. Foco em <strong>ansiedade</strong>, <strong>carreira</strong> e <strong>relações</strong> na vida adulta.
               </p>
 
-              <div className="flex flex-wrap justify-center md:justify-start items-center gap-3 mb-6 text-sm">
-                <div className="flex items-center gap-1.5 bg-white/70 backdrop-blur-sm px-3 py-1.5 rounded-full border border-brand-detail/40">
+              <div className="flex flex-wrap justify-center md:justify-start items-center gap-3 mb-4 md:mb-6 text-xs md:text-sm">
+                <div className="flex items-center gap-1.5 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-brand-detail/40">
                   <span className="flex text-yellow-500">
                     {[...Array(5)].map((_, i) => <Star key={i} size={12} fill="currentColor" />)}
                   </span>
                   <span className="font-bold text-brand-secondary">5,0</span>
-                  <span className="text-brand-text/60">· 48 avaliações no Doctoralia</span>
+                  <span className="text-brand-text/60">· 48 avaliações</span>
                 </div>
               </div>
 
@@ -202,19 +202,19 @@ const Hero = () => {
                   href={waMsg("Olá! Gostaria de agendar a primeira sessão presencial em São Leopoldo.")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-brand-secondary text-white px-7 py-3.5 rounded-full font-bold uppercase tracking-wider text-xs shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 flex items-center justify-center gap-2"
+                  className="bg-brand-secondary text-white px-6 md:px-7 py-3 md:py-3.5 rounded-full font-bold uppercase tracking-wider text-xs shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 flex items-center justify-center gap-2"
                 >
                   Agendar primeira sessão <MessageCircle size={16} />
                 </a>
               </div>
 
-              <p className="text-xs text-brand-text/60 mt-4 italic">
+              <p className="text-[11px] md:text-xs text-brand-text/60 mt-3 md:mt-4 italic">
                 Pague só após o primeiro atendimento.
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="h-[40vh] md:h-auto"></div>
+          <div className="h-[50vh] md:h-auto"></div>
         </div>
       </div>
     </section>
