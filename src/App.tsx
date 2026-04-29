@@ -13,7 +13,6 @@ import {
   ChevronRight,
   Star,
   Instagram,
-  Mail,
   Phone,
   MapPin,
   Clock,
@@ -150,7 +149,16 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-8 lg:gap-10 items-center">
-          <div className="order-1 md:order-2 flex justify-center md:justify-start">
+          <div className="md:hidden text-center">
+            <span className="inline-block text-[10px] font-body uppercase tracking-[0.25em] text-brand-primary mb-4">
+              Psicólogo em São Leopoldo · CRP 07/35759 · desde 2019
+            </span>
+            <h1 className="text-4xl sm:text-5xl font-display leading-[1.05] text-brand-secondary [text-wrap:balance]">
+              Uma terapia onde o silêncio <span className="text-brand-primary">não é a regra</span>.
+            </h1>
+          </div>
+
+          <div className="md:order-2 flex justify-center md:justify-start">
             <div className="relative w-full max-w-[20rem] sm:max-w-sm md:max-w-lg lg:max-w-xl">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-[6px] md:border-[8px] border-white relative z-10">
                 <img
@@ -168,17 +176,17 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="order-2 md:order-1 text-center md:text-left">
-            <span className="inline-block text-[10px] md:text-xs font-body uppercase tracking-[0.25em] text-brand-primary mb-4 md:mb-5">
+          <div className="md:order-1 text-center md:text-left">
+            <span className="hidden md:inline-block text-xs font-body uppercase tracking-[0.25em] text-brand-primary mb-5">
               Psicólogo em São Leopoldo · CRP 07/35759 · desde 2019
             </span>
 
-            <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-display leading-[1.05] text-brand-secondary mb-5 md:mb-6 [text-wrap:balance]">
+            <h1 className="hidden md:block md:text-5xl lg:text-6xl font-display leading-[1.05] text-brand-secondary mb-6 [text-wrap:balance]">
               Uma terapia onde o silêncio <span className="text-brand-primary">não é a regra</span>.
             </h1>
 
             <p className="text-base md:text-lg text-brand-text/75 leading-relaxed mb-7 md:mb-8 max-w-md mx-auto md:mx-0">
-              Atendendo adultos com <strong className="text-brand-secondary font-semibold">ansiedade</strong>, <strong className="text-brand-secondary font-semibold">transições de carreira</strong> e <strong className="text-brand-secondary font-semibold">relações</strong>. Presencial no Centro de São Leopoldo.
+              Atendendo adultos com <strong className="text-brand-secondary font-semibold">ansiedade</strong>, <strong className="text-brand-secondary font-semibold">transições de vida</strong>, <strong className="text-brand-secondary font-semibold">carreira</strong> e <strong className="text-brand-secondary font-semibold">relações</strong>. Presencial no Centro de São Leopoldo.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-5 mb-6">
@@ -465,7 +473,6 @@ const Apresentacao = () => {
               className="w-full h-full"
               src="https://www.youtube.com/embed/rXN8j0qpmpI"
               title="Apresentação Geisson Oleques"
-              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               loading="lazy"
@@ -784,7 +791,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-white/10 text-sm text-white/40">
           <p className="mb-2">Geisson Oleques · CRP 07/35759 · Atendendo desde 2019</p>
           <p className="mb-4">Saúde da mente, corpo e relações</p>
-          <p>© 2024 Arte Mental. Todos os direitos reservados.</p>
+          <p>© 2026 Arte Mental. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
