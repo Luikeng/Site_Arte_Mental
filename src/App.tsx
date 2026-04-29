@@ -149,14 +149,14 @@ const Hero = () => {
         <img
           src={getAssetUrl("hero-desktop.jpg")}
           alt="Geisson Oleques"
-          className="w-full h-full object-cover object-[72%_center]"
+          className="w-full h-full object-cover object-center"
           fetchPriority="high"
           decoding="sync"
           onError={(e) => {
             e.currentTarget.src = "https://picsum.photos/seed/geisson-hero/1920/1080";
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-bg/95 via-brand-bg/55 via-45% to-transparent to-75%"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-bg/40 to-transparent to-40%"></div>
       </div>
 
       <div className="md:hidden absolute inset-0 z-0">
@@ -170,13 +170,13 @@ const Hero = () => {
             e.currentTarget.src = "https://picsum.photos/seed/geisson-mobile/800/1200";
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg from-0% via-brand-bg/75 via-50% to-transparent to-85%"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/30 from-0% to-transparent to-25%"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <ScrollReveal direction="up" intensity={50}>
-            <div className="text-center md:text-left pt-2 md:pt-0">
+            <div className="text-center md:text-left bg-brand-bg/85 md:bg-brand-bg/75 backdrop-blur-md md:backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-xl md:shadow-lg border border-white/40">
               <span className="text-brand-primary font-body uppercase tracking-[0.2em] text-[10px] md:text-xs mb-3 md:mb-4 block">
                 Psicólogo em São Leopoldo · Centro · CRP 07/35759 · desde 2019
               </span>
