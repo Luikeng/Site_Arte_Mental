@@ -207,7 +207,7 @@ const Hero = () => {
 
               <div className="flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-3">
                 <a
-                  href={waMsg("Olá! Gostaria de agendar a primeira sessão presencial em São Leopoldo.")}
+                  href={waMsg("Oi, Geisson! Vi seu site e queria entender melhor antes de agendar. Pode ser?")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-brand-secondary text-white px-6 md:px-7 py-3 md:py-3.5 rounded-full font-bold uppercase tracking-wider text-xs shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 flex items-center justify-center gap-2"
