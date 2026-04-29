@@ -181,7 +181,7 @@ const Hero = () => {
                 Psicólogo em São Leopoldo · Centro · CRP 07/35759 · desde 2019
               </span>
               <h1 className="text-3xl md:text-6xl mb-3 md:mb-4 text-brand-secondary leading-tight">
-                Sua cabeça não desliga?<br /><span className="text-brand-primary">Vamos conversar.</span>
+                Uma terapia onde o silêncio<br /><span className="text-brand-primary">não é a regra.</span>
               </h1>
               <p className="text-sm md:text-lg text-brand-text/80 mb-4 md:mb-6 max-w-lg mx-auto md:mx-0 leading-relaxed">
                 Psicoterapia presencial no Centro de São Leopoldo. Foco em <strong>ansiedade</strong>, <strong>carreira</strong> e <strong>relações</strong> na vida adulta.
