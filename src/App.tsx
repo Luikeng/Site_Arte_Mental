@@ -178,14 +178,22 @@ const Hero = () => {
           <ScrollReveal direction="up" intensity={50}>
             <div className="text-center md:text-left pt-2 md:pt-0">
               <span className="text-brand-primary font-body uppercase tracking-[0.2em] text-[10px] md:text-xs mb-3 md:mb-4 block">
-                Psicólogo em São Leopoldo · Centro · CRP 07/35759
+                Psicólogo em São Leopoldo · Centro · CRP 07/35759 · desde 2019
               </span>
               <h1 className="text-3xl md:text-6xl mb-3 md:mb-4 text-brand-secondary leading-tight">
-                Atendimento presencial<br />no Centro de <span className="whitespace-nowrap">São Leopoldo</span>
+                Sua cabeça não desliga?<br /><span className="text-brand-primary">Vamos conversar.</span>
               </h1>
               <p className="text-sm md:text-lg text-brand-text/80 mb-4 md:mb-6 max-w-lg mx-auto md:mx-0 leading-relaxed">
-                Psicoterapia desde 2019. Foco em <strong>ansiedade</strong>, <strong>carreira</strong> e <strong>relações</strong> na vida adulta.
+                Psicoterapia presencial no Centro de São Leopoldo. Foco em <strong>ansiedade</strong>, <strong>carreira</strong> e <strong>relações</strong> na vida adulta.
               </p>
+
+              <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-4 md:mb-6">
+                {['Ansiedade', 'Carreira', 'Relações', 'Avaliação psicológica'].map((tag) => (
+                  <span key={tag} className="bg-white/70 backdrop-blur-sm text-brand-secondary text-[11px] md:text-xs font-medium px-3 py-1 rounded-full border border-brand-detail/40">
+                    {tag}
+                  </span>
+                ))}
+              </div>
 
               <div className="flex flex-wrap justify-center md:justify-start items-center gap-3 mb-4 md:mb-6 text-xs md:text-sm">
                 <div className="flex items-center gap-1.5 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-brand-detail/40">
@@ -193,7 +201,7 @@ const Hero = () => {
                     {[...Array(5)].map((_, i) => <Star key={i} size={12} fill="currentColor" />)}
                   </span>
                   <span className="font-bold text-brand-secondary">5,0</span>
-                  <span className="text-brand-text/60">· 48 avaliações</span>
+                  <span className="text-brand-text/60">· 48 avaliações Doctoralia</span>
                 </div>
               </div>
 
@@ -208,8 +216,8 @@ const Hero = () => {
                 </a>
               </div>
 
-              <p className="text-[11px] md:text-xs text-brand-text/60 mt-3 md:mt-4 italic">
-                Pague só após o primeiro atendimento.
+              <p className="text-xs md:text-sm text-brand-secondary/90 mt-3 md:mt-4 font-medium">
+                Pague só após o primeiro atendimento — sem compromisso pra começar.
               </p>
             </div>
           </ScrollReveal>
