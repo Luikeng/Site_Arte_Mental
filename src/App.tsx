@@ -149,14 +149,14 @@ const Hero = () => {
         <img
           src={getAssetUrl("hero-desktop.jpg")}
           alt="Geisson Oleques"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-[72%_center]"
           fetchPriority="high"
           decoding="sync"
           onError={(e) => {
             e.currentTarget.src = "https://picsum.photos/seed/geisson-hero/1920/1080";
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-bg/85 via-brand-bg/15 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-bg/95 via-brand-bg/55 via-45% to-transparent to-75%"></div>
       </div>
 
       <div className="md:hidden absolute inset-0 z-0">
@@ -170,7 +170,7 @@ const Hero = () => {
             e.currentTarget.src = "https://picsum.photos/seed/geisson-mobile/800/1200";
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg from-0% via-brand-bg/40 via-30% to-transparent to-55%"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg from-0% via-brand-bg/75 via-50% to-transparent to-85%"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -180,8 +180,8 @@ const Hero = () => {
               <span className="text-brand-primary font-body uppercase tracking-[0.2em] text-[10px] md:text-xs mb-3 md:mb-4 block">
                 Psicólogo em São Leopoldo · Centro · CRP 07/35759 · desde 2019
               </span>
-              <h1 className="text-3xl md:text-6xl mb-3 md:mb-4 text-brand-secondary leading-tight">
-                Uma terapia onde o silêncio<br /><span className="text-brand-primary">não é a regra.</span>
+              <h1 className="text-2xl sm:text-3xl md:text-6xl mb-3 md:mb-4 text-brand-secondary leading-tight [text-wrap:balance]">
+                Uma terapia onde o silêncio <span className="text-brand-primary whitespace-nowrap">não é a regra.</span>
               </h1>
               <p className="text-sm md:text-lg text-brand-text/80 mb-4 md:mb-6 max-w-lg mx-auto md:mx-0 leading-relaxed">
                 Psicoterapia presencial no Centro de São Leopoldo. Foco em <strong>ansiedade</strong>, <strong>carreira</strong> e <strong>relações</strong> na vida adulta.
