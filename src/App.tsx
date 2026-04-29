@@ -144,85 +144,75 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-start md:items-center pt-20 overflow-hidden bg-brand-bg">
-      <div className="hidden md:block absolute inset-0 z-0">
-        <img
-          src={getAssetUrl("hero-desktop.jpg")}
-          alt="Geisson Oleques"
-          className="w-full h-full object-cover object-center"
-          fetchPriority="high"
-          decoding="sync"
-          onError={(e) => {
-            e.currentTarget.src = "https://picsum.photos/seed/geisson-hero/1920/1080";
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-bg/40 to-transparent to-40%"></div>
-      </div>
-
-      <div className="md:hidden absolute inset-0 z-0">
-        <img
-          src={getAssetUrl("hero-mobile.jpg")}
-          alt="Geisson Oleques"
-          className="w-full h-full object-cover object-[right_bottom]"
-          fetchPriority="high"
-          decoding="sync"
-          onError={(e) => {
-            e.currentTarget.src = "https://picsum.photos/seed/geisson-mobile/800/1200";
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/30 from-0% to-transparent to-25%"></div>
-      </div>
+    <section id="inicio" className="relative pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden bg-brand-bg">
+      <div className="blob bg-brand-detail right-[-10%] top-[20%] w-[28rem] h-[28rem] hidden md:block"></div>
+      <div className="blob bg-brand-accent left-[5%] bottom-[5%] w-72 h-72 opacity-30 hidden md:block"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <ScrollReveal direction="up" intensity={50}>
-            <div className="text-center md:text-left bg-brand-bg/85 md:bg-brand-bg/75 backdrop-blur-md md:backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-xl md:shadow-lg border border-white/40">
-              <span className="text-brand-primary font-body uppercase tracking-[0.2em] text-[10px] md:text-xs mb-3 md:mb-4 block">
-                Psicólogo em São Leopoldo · Centro · CRP 07/35759 · desde 2019
-              </span>
-              <h1 className="text-2xl sm:text-3xl md:text-6xl mb-3 md:mb-4 text-brand-secondary leading-tight [text-wrap:balance]">
-                Uma terapia onde o silêncio <span className="text-brand-primary whitespace-nowrap">não é a regra.</span>
-              </h1>
-              <p className="text-sm md:text-lg text-brand-text/80 mb-4 md:mb-6 max-w-lg mx-auto md:mx-0 leading-relaxed">
-                Psicoterapia presencial no Centro de São Leopoldo. Foco em <strong>ansiedade</strong>, <strong>carreira</strong> e <strong>relações</strong> na vida adulta.
-              </p>
-
-              <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-4 md:mb-6">
-                {['Ansiedade', 'Carreira', 'Relações', 'Avaliação psicológica'].map((tag) => (
-                  <span key={tag} className="bg-white/70 backdrop-blur-sm text-brand-secondary text-[11px] md:text-xs font-medium px-3 py-1 rounded-full border border-brand-detail/40">
-                    {tag}
-                  </span>
-                ))}
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="order-1 md:order-2 flex justify-center md:justify-end">
+            <div className="relative w-full max-w-[20rem] sm:max-w-sm md:max-w-md">
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-[6px] md:border-[8px] border-white relative z-10">
+                <img
+                  src={getAssetUrl("perfil.jpg")}
+                  alt="Geisson Oleques — Psicólogo CRP 07/35759"
+                  className="w-full h-full object-cover"
+                  fetchPriority="high"
+                  decoding="sync"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://picsum.photos/seed/geisson-portrait/800/1000";
+                  }}
+                />
               </div>
-
-              <div className="flex flex-wrap justify-center md:justify-start items-center gap-3 mb-4 md:mb-6 text-xs md:text-sm">
-                <div className="flex items-center gap-1.5 bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-brand-detail/40">
-                  <span className="flex text-yellow-500">
-                    {[...Array(5)].map((_, i) => <Star key={i} size={12} fill="currentColor" />)}
-                  </span>
-                  <span className="font-bold text-brand-secondary">5,0</span>
-                  <span className="text-brand-text/60">· 48 avaliações Doctoralia</span>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-3">
-                <a
-                  href={waMsg("Oi, Geisson! Vi seu site e queria entender melhor antes de agendar. Pode ser?")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-brand-secondary text-white px-6 md:px-7 py-3 md:py-3.5 rounded-full font-bold uppercase tracking-wider text-xs shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 flex items-center justify-center gap-2"
-                >
-                  Agendar primeira sessão <MessageCircle size={16} />
-                </a>
-              </div>
-
-              <p className="text-xs md:text-sm text-brand-secondary/90 mt-3 md:mt-4 font-medium">
-                Pague só após o primeiro atendimento — sem compromisso pra começar.
-              </p>
+              <div className="absolute -bottom-4 -right-4 md:-bottom-5 md:-right-5 w-full h-full border-2 border-brand-primary/40 rounded-3xl z-0"></div>
             </div>
-          </ScrollReveal>
+          </div>
 
-          <div className="h-[50vh] md:h-auto"></div>
+          <div className="order-2 md:order-1 text-center md:text-left">
+            <span className="inline-block text-[10px] md:text-xs font-body uppercase tracking-[0.25em] text-brand-primary mb-4 md:mb-5">
+              Psicólogo em São Leopoldo · CRP 07/35759 · desde 2019
+            </span>
+
+            <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-display leading-[1.05] text-brand-secondary mb-5 md:mb-6 [text-wrap:balance]">
+              Uma terapia onde o silêncio <span className="text-brand-primary">não é a regra</span>.
+            </h1>
+
+            <p className="text-base md:text-lg text-brand-text/75 leading-relaxed mb-7 md:mb-8 max-w-md mx-auto md:mx-0">
+              Atendendo adultos com <strong className="text-brand-secondary font-semibold">ansiedade</strong>, <strong className="text-brand-secondary font-semibold">transições de carreira</strong> e <strong className="text-brand-secondary font-semibold">relações</strong>. Presencial no Centro de São Leopoldo.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-5 mb-6">
+              <a
+                href={waMsg("Oi, Geisson! Vi seu site e queria entender melhor antes de agendar. Pode ser?")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-brand-secondary text-white px-7 py-4 rounded-full font-bold text-sm tracking-wide shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 inline-flex items-center justify-center gap-2 w-full sm:w-auto"
+              >
+                Conversar pelo WhatsApp
+                <MessageCircle size={18} />
+              </a>
+
+              <a
+                href="https://www.doctoralia.com.br/geisson-oleques/psicologo/sao-leopoldo#profile-reviews"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm group"
+              >
+                <span className="flex text-yellow-500">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
+                </span>
+                <span className="font-bold text-brand-secondary">5,0</span>
+                <span className="text-brand-text/60">·</span>
+                <span className="text-brand-text/70 group-hover:text-brand-primary transition-colors underline-offset-4 group-hover:underline">
+                  48 avaliações
+                </span>
+              </a>
+            </div>
+
+            <p className="text-xs md:text-sm text-brand-secondary/70 italic">
+              Pague só após o primeiro atendimento. Sem compromisso pra começar.
+            </p>
+          </div>
         </div>
       </div>
     </section>
