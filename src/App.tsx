@@ -149,14 +149,14 @@ const Hero = () => {
       <div className="blob bg-brand-accent left-[5%] bottom-[5%] w-72 h-72 opacity-30 hidden md:block"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <div className="order-1 md:order-2 flex justify-center md:justify-end">
-            <div className="relative w-full max-w-[20rem] sm:max-w-sm md:max-w-md">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10 items-center">
+          <div className="order-1 md:order-2 flex justify-center md:justify-start">
+            <div className="relative w-full max-w-[20rem] sm:max-w-sm md:max-w-lg lg:max-w-xl">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-[6px] md:border-[8px] border-white relative z-10">
                 <img
-                  src={getAssetUrl("perfil.jpg")}
+                  src={getAssetUrl("hero-portrait.jpg")}
                   alt="Geisson Oleques — Psicólogo CRP 07/35759"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                   fetchPriority="high"
                   decoding="sync"
                   onError={(e) => {
