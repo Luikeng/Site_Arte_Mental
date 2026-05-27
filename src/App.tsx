@@ -60,8 +60,8 @@ const getAssetUrl = (name: string) => {
   return `${cleanBase}${cleanName}`;
 };
 
-const WHATSAPP_BASE = "https://api.whatsapp.com/send?phone=5551992749130";
-const waMsg = (text: string) => `${WHATSAPP_BASE}&text=${encodeURIComponent(text)}`;
+const WHATSAPP_BASE = "https://wa.me/5551992749130";
+const waMsg = (text: string) => `${WHATSAPP_BASE}?text=${encodeURIComponent(text)}`;
 
 // --- Components ---
 
@@ -191,7 +191,7 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-5 mb-6">
               <a
-                href={waMsg("Oi, Geisson! Vi seu site e queria entender melhor antes de agendar. Pode ser?")}
+                href={waMsg("Oi, Geisson! Quero agendar.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-brand-secondary text-white px-7 py-4 rounded-full font-bold text-sm tracking-wide shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 inline-flex items-center justify-center gap-2 w-full sm:w-auto"
@@ -439,7 +439,7 @@ const About = () => {
 
                 <div className="pt-6">
                   <a
-                    href={waMsg("Olá! Gostaria de saber mais sobre a abordagem antes de agendar.")}
+                    href={waMsg("Olá! Quero agendar.")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-brand-primary font-bold hover:gap-4 transition-all"
@@ -483,7 +483,7 @@ const Apresentacao = () => {
         <ScrollReveal direction="up" delay={0.4}>
           <div className="mt-12">
             <a
-              href={waMsg("Olá! Vi sua apresentação no site e gostaria de agendar.")}
+              href={waMsg("Olá! Quero agendar.")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-brand-primary text-white px-10 py-4 rounded-full font-bold uppercase tracking-wider text-sm shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1"
@@ -571,7 +571,7 @@ const ComoChegar = () => {
                   Abrir no Google Maps <ExternalLink size={14} />
                 </a>
                 <a
-                  href={waMsg("Olá! Vou ao consultório no Centro de São Leopoldo. Quero agendar.")}
+                  href={waMsg("Olá! Quero agendar.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 inline-flex items-center justify-center gap-2 bg-brand-primary text-white px-5 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg transition-all"
