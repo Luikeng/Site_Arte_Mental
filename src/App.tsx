@@ -162,7 +162,7 @@ const Hero = () => {
             <div className="relative w-full max-w-[20rem] sm:max-w-sm md:max-w-lg lg:max-w-xl">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-[6px] md:border-[8px] border-white relative z-10">
                 <img
-                  src={getAssetUrl("hero-portrait.jpg")}
+                  src={getAssetUrl("hero-portrait.webp")}
                   alt="Geisson Oleques — Psicólogo CRP 07/35759"
                   className="w-full h-full object-cover object-center"
                   fetchPriority="high"
@@ -390,7 +390,7 @@ const About = () => {
             <div className="relative">
               <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white relative z-10">
                 <img
-                  src={getAssetUrl("perfil.jpg")}
+                  src={getAssetUrl("perfil.webp")}
                   alt="Geisson Oleques - Psicólogo"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -512,7 +512,7 @@ const ComoChegar = () => {
           <ScrollReveal direction="left" intensity={40}>
             <div className="aspect-[4/3] md:aspect-auto md:h-full rounded-3xl overflow-hidden shadow-xl border border-brand-detail/30">
               <img
-                src={getAssetUrl("consultorio.jpg")}
+                src={getAssetUrl("consultorio.webp")}
                 alt="Consultório Arte Mental — Centro de São Leopoldo"
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -669,25 +669,25 @@ const InstagramFeed = () => {
   const posts = [
     {
       id: 1,
-      url: "tdah.jpg",
+      url: "tdah.webp",
       link: "https://www.instagram.com/geissonoleques/p/DJR0YA8ReLA/",
       title: "TDAH em adultos"
     },
     {
       id: 2,
-      url: "conviver.jpg",
+      url: "conviver.webp",
       link: "https://www.instagram.com/geissonoleques/p/ClhjzL3LzaO/",
       title: "Conviver com você mesmo"
     },
     {
       id: 3,
-      url: "remedio.jpg",
+      url: "remedio.webp",
       link: "https://www.instagram.com/geissonoleques/p/CdoQ7rfsY6L/",
       title: "Medicação psiquiátrica"
     },
     {
       id: 4,
-      url: "dependencia.jpg",
+      url: "dependencia.webp",
       link: "https://www.instagram.com/geissonoleques/p/CZsOIhZPH5L/",
       title: "Dependência Emocional"
     },

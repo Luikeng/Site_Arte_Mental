@@ -14,9 +14,14 @@
     <meta name="geo.placename" content="São Leopoldo" />
     <link rel="icon" type="image/svg+xml" href="/conversa.svg" />
 
-    <!-- Preload das Imagens Críticas (LCP) -->
-    <link rel="preload" as="image" href="/hero-desktop.jpg" media="(min-width: 768px)" />
-    <link rel="preload" as="image" href="/hero-mobile.jpg" media="(max-width: 767px)" />
+    <!-- Preload da imagem do hero (o LCP real é hero-portrait.jpg, usado no App) -->
+    <link rel="preload" as="image" href="/hero-portrait.webp" fetchpriority="high" />
+
+    <!-- Fontes: preconnect + link (antes era @import dentro do CSS, que bloqueava a renderização) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" />
 
     <!-- Open Graph (WhatsApp, Instagram, Facebook) -->
     <meta property="og:type" content="website" />
