@@ -82,8 +82,8 @@ const Navbar = () => {
     { name: 'Sobre', href: '#sobre' },
     { name: 'Como chegar', href: '#como-chegar' },
     { name: 'Dúvidas', href: '#duvidas' },
-    { name: 'Agendar', href: '#agendar' },
     { name: 'Contato', href: '#contato' },
+    { name: 'Agendar', href: '#agendar' },
   ];
 
   return (
@@ -99,7 +99,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-bold bg-brand-primary text-white px-4 py-2 rounded-full hover:bg-brand-secondary transition-colors shadow-sm whitespace-nowrap"
+                className="text-sm font-bold bg-brand-primary text-white px-4 py-2 rounded-full hover:bg-brand-secondary transition-colors shadow-sm whitespace-nowrap md:ml-2"
               >
                 {link.name}
               </a>
