@@ -82,6 +82,7 @@ const Navbar = () => {
     { name: 'Sobre', href: '#sobre' },
     { name: 'Como chegar', href: '#como-chegar' },
     { name: 'Dúvidas', href: '#duvidas' },
+    { name: 'Agendar', href: '#agendar' },
     { name: 'Contato', href: '#contato' },
   ];
 
@@ -92,16 +93,26 @@ const Navbar = () => {
           Arte Mental.
         </div>
 
-        <div className="hidden md:flex space-x-7">
+        <div className="hidden md:flex items-center space-x-6">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-brand-text hover:text-brand-primary transition-colors relative group"
-            >
-              {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-primary transition-all group-hover:w-full"></span>
-            </a>
+            link.href === '#agendar' ? (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-bold bg-brand-primary text-white px-4 py-2 rounded-full hover:bg-brand-secondary transition-colors shadow-sm whitespace-nowrap"
+              >
+                {link.name}
+              </a>
+            ) : (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium text-brand-text hover:text-brand-primary transition-colors relative group whitespace-nowrap"
+              >
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-primary transition-all group-hover:w-full"></span>
+              </a>
+            )
           ))}
         </div>
 
@@ -127,8 +138,10 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-lg font-medium text-brand-text"
                   onClick={() => setIsOpen(false)}
+                  className={link.href === '#agendar'
+                    ? "text-lg font-bold bg-brand-primary text-white px-5 py-3 rounded-full text-center"
+                    : "text-lg font-medium text-brand-text"}
                 >
                   {link.name}
                 </a>
@@ -754,6 +767,53 @@ const InstagramFeed = () => {
   );
 };
 
+const Agendamento = () => {
+  return (
+    <section id="agendar" className="py-24 bg-brand-bg">
+      <div className="container mx-auto px-6">
+        <ScrollReveal direction="up">
+          <div className="text-center mb-12">
+            <span className="inline-flex items-center gap-2 text-brand-primary font-bold uppercase tracking-widest text-xs mb-4">
+              <Calendar size={16} /> Agenda em tempo real
+            </span>
+            <h2 className="text-4xl md:text-5xl text-brand-secondary mb-4">Agende sua sessão online</h2>
+            <p className="text-brand-text/70 max-w-2xl mx-auto">
+              Escolha o melhor dia e horário direto pela agenda abaixo. Pague só após o primeiro atendimento — sem compromisso pra começar.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal direction="up" intensity={30} delay={0.15}>
+          <div className="max-w-7xl mx-auto bg-white rounded-3xl border border-brand-detail/30 shadow-xl overflow-hidden p-2 sm:p-3">
+            <iframe
+              src="https://sistema.sistemapsicologia.com.br/agendar/geisson?embed=1"
+              title="Agendar com Psicólogo Geisson Oleques"
+              className="w-full rounded-2xl block h-[1200px] md:h-[600px]"
+              style={{ border: 'none' }}
+              loading="lazy"
+            ></iframe>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal direction="up" delay={0.3}>
+          <p className="text-center text-brand-text/60 mt-8 text-sm">
+            Prefere combinar pelo WhatsApp?{' '}
+            <a
+              href={waMsg("Olá! Quero agendar.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-primary font-bold hover:underline"
+            >
+              Fale comigo por aqui
+            </a>
+            .
+          </p>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+};
+
 const Footer = () => {
   return (
     <footer id="contato" className="bg-brand-secondary text-white py-20">
@@ -813,6 +873,7 @@ export default function App() {
       <ComoChegar />
       <FAQ />
       <InstagramFeed />
+      <Agendamento />
       <Footer />
 
       {/* Floating WhatsApp */}
