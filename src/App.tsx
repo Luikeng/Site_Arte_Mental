@@ -164,11 +164,14 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-8 lg:gap-10 items-center">
           <div className="md:hidden text-center">
             <span className="inline-block text-[10px] font-body uppercase tracking-[0.25em] text-brand-primary mb-4">
-              Psicólogo em São Leopoldo · CRP 07/35759 · desde 2019
+              CRP 07/35759 · Atendimento presencial desde 2019
             </span>
             <h1 className="text-4xl sm:text-5xl font-display leading-[1.05] text-brand-secondary [text-wrap:balance]">
-              Uma terapia onde o silêncio <span className="text-brand-primary">não é a regra</span>.
+              Psicólogo em <span className="text-brand-primary">São Leopoldo</span>
             </h1>
+            <p className="mt-3 font-display italic text-xl text-brand-primary/90 [text-wrap:balance]">
+              Uma terapia onde o silêncio não é a regra.
+            </p>
           </div>
 
           <div className="md:order-2 flex justify-center md:justify-start">
@@ -191,15 +194,19 @@ const Hero = () => {
 
           <div className="md:order-1 text-center md:text-left">
             <span className="hidden md:inline-block text-xs font-body uppercase tracking-[0.25em] text-brand-primary mb-5">
-              Psicólogo em São Leopoldo · CRP 07/35759 · desde 2019
+              CRP 07/35759 · Atendimento presencial desde 2019
             </span>
 
-            <h1 className="hidden md:block md:text-5xl lg:text-6xl font-display leading-[1.05] text-brand-secondary mb-6 [text-wrap:balance]">
-              Uma terapia onde o silêncio <span className="text-brand-primary">não é a regra</span>.
+            <h1 className="hidden md:block md:text-5xl lg:text-6xl font-display leading-[1.05] text-brand-secondary mb-3 [text-wrap:balance]">
+              Psicólogo em <span className="text-brand-primary">São Leopoldo</span>
             </h1>
 
+            <p className="hidden md:block font-display italic text-2xl lg:text-3xl text-brand-primary/90 mb-6 [text-wrap:balance]">
+              Uma terapia onde o silêncio não é a regra.
+            </p>
+
             <p className="text-base md:text-lg text-brand-text/75 leading-relaxed mb-7 md:mb-8 max-w-md mx-auto md:mx-0">
-              Atendendo adultos com <strong className="text-brand-secondary font-semibold">ansiedade</strong>, <strong className="text-brand-secondary font-semibold">transições de vida</strong>, <strong className="text-brand-secondary font-semibold">carreira</strong> e <strong className="text-brand-secondary font-semibold">relações</strong>. Presencial no Centro de São Leopoldo.
+              Presencial no Centro de São Leopoldo, para adultos com <strong className="text-brand-secondary font-semibold">ansiedade</strong>, <strong className="text-brand-secondary font-semibold">transições de vida</strong>, <strong className="text-brand-secondary font-semibold">carreira</strong> e <strong className="text-brand-secondary font-semibold">relações</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-5 mb-6">
