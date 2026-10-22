@@ -24,6 +24,9 @@
  */
 
 var TOKEN = 'TROQUE-POR-UMA-SENHA-LONGA';
+// Aviso no Discord a cada clique (opcional). Discord → canal → Editar canal →
+// Integrações → Webhooks → Novo webhook → Copiar URL do webhook. Vazio = sem aviso.
+var DISCORD_WEBHOOK = '';
 var ABA = 'Cliques';
 var COLUNAS = [
   'recebido_em', 'quando_cliente', 'botao', 'pagina', 'dispositivo', 'origem',
@@ -58,6 +61,30 @@ function _json(o) {
 }
 
 function _txt(v, max) { return String(v == null ? '' : v).slice(0, max || 200); }
+
+/** Manda "novo clique" pro Discord. Falha do Discord nunca impede de gravar a linha. */
+function _avisarDiscord(botao, dispositivo, origem, linha) {
+  if (!DISCORD_WEBHOOK) return;
+  try {
+    var hora = Utilities.formatDate(new Date(), Session.getScriptTimeZone(), 'dd/MM HH:mm');
+    var de = origem === 'google-ads' ? 'veio do **anúncio**' : (origem ? 'veio de ' + origem : 'origem desconhecida');
+    var o_que = botao === 'agenda' ? 'abriu a **agenda online**' : 'clicou no **WhatsApp**';
+    var url = SpreadsheetApp.getActiveSpreadsheet().getUrl() + '#gid=' + _aba().getSheetId() + '&range=A' + linha;
+    UrlFetchApp.fetch(DISCORD_WEBHOOK, {
+      method: 'post', contentType: 'application/json', muteHttpExceptions: true,
+      payload: JSON.stringify({
+        username: 'Arte Mental — site',
+        content: '🔔 ' + hora + ' · alguém ' + o_que + ' · ' + dispositivo + ' · ' + de +
+                 '\nSe virar paciente, marque a linha ' + linha + ': ' + url
+      })
+    });
+  } catch (e) {}
+}
+
+/** Rode 1x pelo editor (Executar → testarDiscord) pra autorizar e ver a mensagem chegar. */
+function testarDiscord() {
+  _avisarDiscord('whatsapp', 'celular', 'google-ads', 2);
+}
 
 /** GET sem token = teste. GET com token = devolve linhas marcadas como paciente e ainda não enviadas. */
 function doGet(e) {
@@ -113,6 +140,7 @@ function doPost(e) {
       _txt(d.origem, 60), _txt(d.gclid, 200), _txt(d.gbraid, 200), _txt(d.wbraid, 200),
       '', '', '', ''
     ]);
+    _avisarDiscord(botao, _txt(d.dispositivo, 10), _txt(d.origem, 60), sh.getLastRow());
     return _json({ ok: true });
   } catch (err) {
     return _json({ ok: false, erro: String(err.message || err) });
