@@ -146,6 +146,84 @@
       }, true);
     </script>
 
+    <!-- Registro de cliques → planilha privada (docs/cliques_apps_script.gs).
+         Silencioso: não muda a mensagem do WhatsApp nem a tela. Guarda só horário,
+         botão e o código do clique do Google (gclid), pra ligar clique → paciente
+         e avisar o Google Ads quem virou paciente. Sem ENDPOINT, não faz nada. -->
+    <script>
+      (function () {
+        var ENDPOINT = 'https://script.google.com/macros/s/AKfycbzzbYcRJ-lVmne-_Hebia-G1hHLBlYxRdehdESbpAAuG8lXRXL9x9cAaBRzDNrwtFsTHg/exec'; // Apps Script "Arte Mental — Cliques do site"
+        var CHAVE = 'am_click';
+        var DIAS = 90;     // janela de importação de conversão offline do Google
+
+        function ler() {
+          try { return JSON.parse(localStorage.getItem(CHAVE) || 'null'); } catch (e) { return null; }
+        }
+
+        // 1) Na chegada: guarda gclid/gbraid/wbraid e a origem (vale 90 dias)
+        try {
+          var q = new URLSearchParams(location.search);
+          var novo = { gclid: q.get('gclid') || '', gbraid: q.get('gbraid') || '', wbraid: q.get('wbraid') || '' };
+          var ref = '';
+          try { ref = document.referrer ? new URL(document.referrer).hostname : ''; } catch (e) {}
+          var temClique = novo.gclid || novo.gbraid || novo.wbraid;
+          var origem = q.get('utm_source') || (temClique ? 'google-ads' : ref);
+          var atual = ler();
+          if (temClique) {
+            novo.origem = origem; novo.ts = Date.now();
+            localStorage.setItem(CHAVE, JSON.stringify(novo));
+          } else if (!atual || Date.now() - atual.ts > DIAS * 864e5) {
+            localStorage.setItem(CHAVE, JSON.stringify({ gclid: '', gbraid: '', wbraid: '', origem: origem || 'direto', ts: Date.now() }));
+          }
+        } catch (e) {}
+
+        // fallback: cookie do Google Ads (_gcl_aw = "GCL.<ts>.<gclid>")
+        function gclidCookie() {
+          var m = document.cookie.match(/(?:^|;\s*)_gcl_aw=([^;]+)/);
+          return m ? decodeURIComponent(m[1]).split('.').slice(2).join('.') : '';
+        }
+
+        function enviar(botao) {
+          if (!ENDPOINT) return;
+          var c = ler() || {};
+          if (c.ts && Date.now() - c.ts > DIAS * 864e5) c = {};
+          var corpo = JSON.stringify({
+            v: 1, tipo: 'clique', botao: botao,
+            quando: new Date().toString().slice(0, 33),
+            pagina: location.pathname + location.hash,
+            dispositivo: /Mobi|Android|iPhone/i.test(navigator.userAgent) ? 'celular' : 'computador',
+            origem: c.origem || '',
+            gclid: c.gclid || gclidCookie(), gbraid: c.gbraid || '', wbraid: c.wbraid || ''
+          });
+          try {
+            // text/plain evita preflight de CORS; sendBeacon sobrevive à troca de aba pro WhatsApp
+            if (!navigator.sendBeacon(ENDPOINT, new Blob([corpo], { type: 'text/plain;charset=UTF-8' }))) {
+              fetch(ENDPOINT, { method: 'POST', body: corpo, mode: 'no-cors', keepalive: true });
+            }
+          } catch (e) {}
+        }
+
+        // 2) Clique em qualquer link de WhatsApp
+        document.addEventListener('click', function (e) {
+          var a = e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"], a[href*="whatsapp://"]');
+          if (a) enviar('whatsapp');
+        }, true);
+
+        // 3) Agenda online: é um iframe de outro domínio, o clique lá dentro não chega aqui.
+        //    Quando o foco vai pro iframe da agenda, a janela perde o foco → conta 1x por visita.
+        var agendaContada = false;
+        window.addEventListener('blur', function () {
+          setTimeout(function () {
+            var el = document.activeElement;
+            if (!agendaContada && el && el.tagName === 'IFRAME' && /agendar/.test(el.src || '')) {
+              agendaContada = true;
+              enviar('agenda');
+            }
+          }, 0);
+        });
+      })();
+    </script>
+
     <!-- Meta Pixel (Arte Mental) — base + PageView. Evento Contact disparado no listener acima. -->
     <script>
       !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
