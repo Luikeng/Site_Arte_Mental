@@ -20,6 +20,7 @@ import {
   ShieldCheck,
   Brain,
   Briefcase,
+  Users,
   ScrollText,
   ParkingCircle,
   Wallet,
@@ -291,13 +292,18 @@ const Services = () => {
   const services = [
     {
       icon: <Brain className="text-brand-primary" size={48} strokeWidth={1.4} />,
-      title: 'Adultos com ansiedade',
-      description: 'Você sente que sua cabeça não desliga, evita situações ou se sente travado(a) por preocupações? A terapia ajuda a entender o ciclo da ansiedade e construir formas mais leves de viver.',
+      title: 'Ansiedade e depressão',
+      description: 'Cabeça que não desliga, preocupação constante ou falta de energia para o que antes fazia sentido? A terapia ajuda a entender o que está acontecendo e a viver de forma mais leve.',
+    },
+    {
+      icon: <Users className="text-brand-primary" size={48} strokeWidth={1.4} />,
+      title: 'Casal, relacionamentos e família',
+      description: 'Conflitos no casal ou em família e padrões que se repetem nas relações. Com a abordagem sistêmica, olhamos para você dentro das suas relações. Atendo individual ou casal.',
     },
     {
       icon: <Briefcase className="text-brand-primary" size={48} strokeWidth={1.4} />,
       title: 'Adultos jovens em transição de carreira',
-      description: 'Primeiro emprego, mudança de área, dúvida sobre o que fazer da vida ou sensação de estar parado enquanto todos avançam. Um espaço pra pensar a sua carreira sem pressa.',
+      description: 'Primeiro emprego, mudança de área, esgotamento (burnout) ou sensação de estar parado enquanto todos avançam. Um espaço pra pensar a sua carreira sem pressa.',
     },
     {
       icon: <ScrollText className="text-brand-primary" size={48} strokeWidth={1.4} />,
@@ -312,10 +318,10 @@ const Services = () => {
         <ScrollReveal direction="up">
           <h2 className="text-4xl md:text-5xl text-center mb-4 text-brand-secondary">Atendimentos presenciais</h2>
           <p className="text-center text-brand-text/70 max-w-2xl mx-auto mb-16">
-            Consultório no Centro de São Leopoldo. Sessões individuais de 50 minutos.
+            Consultório no Centro de São Leopoldo. Sessões de 50 minutos, individuais ou de casal.
           </p>
         </ScrollReveal>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <ScrollReveal key={service.title} delay={index * 0.15} direction="up" intensity={30}>
               <div className="bg-white p-10 rounded-3xl border border-brand-detail/30 shadow-sm hover:shadow-xl transition-all hover:-translate-y-2 flex flex-col items-center text-center h-full">
@@ -331,7 +337,7 @@ const Services = () => {
 
         <ScrollReveal direction="up" delay={0.3}>
           <p className="text-center text-brand-text/60 mt-12 max-w-3xl mx-auto text-sm italic">
-            Atendimento dedicado a adultos e jovens adultos. Também atendo famílias, relacionamentos e dúvidas de carreira em geral.
+            Atendimento dedicado a adultos e jovens adultos de São Leopoldo, Novo Hamburgo, Esteio e região.
           </p>
         </ScrollReveal>
       </div>
@@ -524,7 +530,7 @@ const ComoChegar = () => {
         <ScrollReveal direction="up">
           <h2 className="text-4xl md:text-5xl text-center mb-4 text-brand-secondary">Como chegar</h2>
           <p className="text-center text-brand-text/70 max-w-2xl mx-auto mb-16">
-            Consultório no Centro de São Leopoldo. Estacionamento público gratuito na rua.
+            Consultório no Centro de São Leopoldo. Atendo pacientes de São Leopoldo, Novo Hamburgo, Esteio e região. Estacionamento público gratuito na rua.
           </p>
         </ScrollReveal>
 
@@ -623,7 +629,7 @@ const FAQ = () => {
     },
     {
       q: 'Como funcionam os atendimentos?',
-      a: 'Sessões individuais de 50 minutos, com frequência mínima semanal. Iniciam pontualmente no horário agendado.'
+      a: 'Sessões de 50 minutos, individuais ou de casal, com frequência mínima semanal. Iniciam pontualmente no horário agendado.'
     },
     {
       q: 'Aceita reembolso de plano de saúde?',
