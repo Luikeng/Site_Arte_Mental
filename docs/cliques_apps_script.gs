@@ -7,7 +7,11 @@
  * MCP_google_ADS lê as linhas marcadas e avisa o Google Ads (conversão offline
  * "Paciente"), usando o gclid. Nada aparece pra pessoa nem na mensagem do WhatsApp.
  *
- * NÃO guarda nome, telefone nem dado clínico. Só horário, botão e código do clique.
+ * O site NÃO manda nome, telefone nem dado clínico. Só horário, botão e código do clique.
+ *
+ * ANOTAÇÕES: a coluna N ("anotações") e as seguintes são livres pro Geisson
+ * (nome, telefone…). O script só lê/escreve A–M e nunca envia N+ ao Google.
+ * NUNCA inserir coluna entre A e M — as posições são fixas (COLUNAS abaixo).
  *
  * COMO INSTALAR (uma vez, ~5 min)
  *   1. Crie uma planilha nova no Google Sheets: "Arte Mental — Cliques do site".
