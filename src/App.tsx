@@ -667,6 +667,8 @@ const FAQ = () => {
 
   return (
     <section id="duvidas" className="py-24 bg-brand-accent/20">
+      {/* alias: sitelink "Dúvidas Frequentes" do Google Ads aponta pra #respostas */}
+      <span id="respostas" aria-hidden="true" />
       <div className="container mx-auto px-6 max-w-4xl">
         <ScrollReveal direction="up">
           <h2 className="text-4xl md:text-5xl text-center mb-16 text-brand-secondary">Dúvidas comuns</h2>
@@ -783,6 +785,8 @@ const InstagramFeed = () => {
 const Agendamento = () => {
   return (
     <section id="agendar" className="py-24 bg-brand-bg">
+      {/* alias: sitelink "Agende Seu Horário" do Google Ads aponta pra #agenda */}
+      <span id="agenda" aria-hidden="true" />
       <div className="container mx-auto px-6">
         <ScrollReveal direction="up">
           <div className="text-center mb-12">
