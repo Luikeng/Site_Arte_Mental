@@ -207,7 +207,7 @@ const Hero = () => {
             </p>
 
             <p className="text-base md:text-lg text-brand-text/75 leading-relaxed mb-7 md:mb-8 max-w-md mx-auto md:mx-0">
-              Presencial no Centro de São Leopoldo, para adultos com <strong className="text-brand-secondary font-semibold">ansiedade</strong>, <strong className="text-brand-secondary font-semibold">transições de vida</strong>, <strong className="text-brand-secondary font-semibold">carreira</strong> e <strong className="text-brand-secondary font-semibold">relações</strong>.
+              Atendimento particular e presencial no Centro de São Leopoldo, para adultos com <strong className="text-brand-secondary font-semibold">ansiedade</strong>, <strong className="text-brand-secondary font-semibold">transições de vida</strong>, <strong className="text-brand-secondary font-semibold">carreira</strong> e <strong className="text-brand-secondary font-semibold">relações</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-5 mb-6">
